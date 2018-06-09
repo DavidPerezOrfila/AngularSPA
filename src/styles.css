@@ -4,6 +4,14 @@
     margin-top: 20px;
 }
 
+body {
+    padding-bottom: 50px;
+}
+
+.card-columns {
+    display: inline-block
+}
+
 
 /* Animaciones */
 
