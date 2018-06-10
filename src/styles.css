@@ -12,6 +12,9 @@ body {
     display: inline-block
 }
 
+.logo {
+  max-block-size: 120px;
+}
 
 /* Animaciones */
 
