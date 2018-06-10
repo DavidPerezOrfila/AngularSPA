@@ -12,8 +12,9 @@
                 <small class="text-muted">{{ heroe.aparicion }}</small>
             </p>
         </div>
-        <button type="button" class="btn btn-outline-primary btn-block">
+        <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
       Ver más...
     </button>
+        <!--<a [routerLink]="['heroe', i]" class="btn btn-outline-primary btn-block">Ver más link... </a>-->
     </div>
 </div>

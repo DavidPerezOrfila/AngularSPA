@@ -8,10 +8,14 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroeComponent } from './components/heroe/heroe.component';
 
 // Rutas
 import { APP_ROUTING } from './app.routes';
+
+// Services
 import { HeroesService } from './services/heroes.service';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { HeroesService } from './services/heroes.service';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,
