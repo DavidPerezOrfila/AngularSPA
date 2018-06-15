@@ -1,9 +1,10 @@
+import { Heroe } from './heroes.service';
 import { Injectable  } from '@angular/core';
 
 @Injectable()
 export class HeroesService {
-
-    private heroes: Heroe[] = [
+    heroes: Heroe[] = [];
+    private _data: Heroe[] = [
         {
             nombre: 'Aquaman',
             // tslint:disable-next-line:max-line-length
@@ -70,26 +71,20 @@ export class HeroesService {
     }
 
     getHeroes(): Heroe[] {
-        return this.heroes;
+        this.heroes = [];
+        this.heroes = this._data;
+        return this._data;
     }
 
     getHeroe(idx: string) {
-      return this.heroes[ idx ];
+        return this.heroes[ idx ];
     }
 
-    buscarHeroes(termino: string) {
-        // tslint:disable-next-line:prefer-const
-        let heroesArr: Heroe[] = [];
+    buscarHeroes(termino: string): Heroe[] {
+        this.heroes = [];
         termino = termino.toLowerCase();
-        // tslint:disable-next-line:prefer-const
-        for (let heroe of this.heroes) {
-            // tslint:disable-next-line:prefer-const
-            let nombre = heroe.nombre.toLowerCase();
-            if (nombre.indexOf(termino) >= 0 ) {
-                heroesArr.push(heroe);
-            }
-        }
-        return heroesArr;
+        this.heroes = this.getHeroes().filter(heroe => heroe.nombre.toLowerCase().indexOf(termino) !== -1);
+        return this.heroes;
     }
 }
 
