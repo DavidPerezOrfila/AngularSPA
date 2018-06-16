@@ -18,9 +18,9 @@ export class HeroesComponent implements OnInit {
         if (Reflect.ownKeys(params).length > 0 && params['termino']) {
           console.log('han pasado parámetros', params['termino']);
           // tslint:disable-next-line:prefer-const
-          let filtro = params['termino'];
+          this.termino = params['termino'];
           this.busqueda = true;
-          this.heroes = this._heroesService.buscarHeroes(filtro);
+          this.heroes = this._heroesService.buscarHeroes(this.termino);
             console.log(this.heroes);
         } else {
           console.log('no han pasado parámetros!');
